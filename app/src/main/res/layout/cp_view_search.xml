@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:gravity="center_vertical"
+    android:paddingTop="8dp"
+    android:paddingBottom="8dp"
+    android:background="#F3F3F3">
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="34dp"
+        android:layout_weight="1"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:background="@drawable/cp_search_box_bg">
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:padding="8dp"
+            android:src="@mipmap/new_search"
+            android:scaleType="center"
+            tools:ignore="ContentDescription" />
+
+        <EditText
+            android:id="@+id/et_search"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:background="@null"
+            android:gravity="center_vertical"
+            android:hint="城市名或拼音"
+            android:textColorHint="#8c8c8c"
+            android:maxLines="1"
+            android:inputType="text"
+            android:textColor="#8c8c8c"
+            android:textSize="15sp"
+            tools:ignore="RtlHardcoded" />
+
+        <ImageView
+            android:id="@+id/iv_search_clear"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:paddingLeft="8dp"
+            android:paddingRight="8dp"
+            android:src="@mipmap/cp_ic_search_clear"
+            android:visibility="gone"
+            tools:ignore="ContentDescription" />
+    </LinearLayout>
+
+
+</LinearLayout>

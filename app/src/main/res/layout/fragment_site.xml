@@ -1,0 +1,298 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/colorBackground">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_60"
+        android:background="@color/colorWhite">
+
+        <LinearLayout
+            android:id="@+id/ll_city"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/tv_city"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="广州"
+                android:textSize="@dimen/text_size_15_sp"
+                android:textColor="#FF092E48"
+                android:layout_gravity="center"
+                android:layout_marginLeft="@dimen/dp_16"/>
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@mipmap/down"
+                android:scaleType="centerCrop"
+                android:layout_gravity="center"
+                android:layout_marginLeft="@dimen/dp_10"/>
+
+        </LinearLayout>
+
+        <RelativeLayout
+
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_40"
+            android:layout_weight="1"
+            android:background="@drawable/shape_search_bg"
+            android:layout_marginLeft="@dimen/dimen_15_dp"
+            android:layout_marginTop="@dimen/dp_10">
+
+            <TextView
+                android:id="@+id/tv_list_key"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@null"
+                android:hint="搜索目的地或附近站点"
+                android:textSize="@dimen/text_size_14_sp"
+                android:textColor="#B3B5BE"
+                android:layout_centerInParent="true"
+                android:layout_toRightOf="@+id/iv"
+                android:layout_marginLeft="@dimen/dimen_10_dp"/>
+
+            <ImageView
+                android:id="@+id/iv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@mipmap/new_search"
+                android:scaleType="centerCrop"
+                android:layout_centerInParent="true"
+                android:layout_alignParentLeft="true"
+                android:layout_marginLeft="@dimen/dp_20"/>
+
+        </RelativeLayout>
+
+        <LinearLayout
+            android:id="@+id/ll_switch_map"
+            android:layout_width="@dimen/dp_50"
+            android:layout_height="match_parent"
+            android:gravity="center">
+
+            <ImageView
+                android:id="@+id/iv_switch_map"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:scaleType="centerCrop" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+    <RadioGroup
+        android:visibility="gone"
+        android:id="@+id/rg_comment"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_50"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:background="@color/colorWhite">
+
+        <RadioButton
+            android:id="@+id/rb_site_region"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:button="@null"
+            android:text="价格较低"
+            android:textSize="@dimen/text_size_14_sp"
+            android:textColor="@drawable/navigation_home_text_selector"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:drawableRight="@mipmap/down" />
+
+        <RadioButton
+            android:id="@+id/rb_sort"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:button="@null"
+            android:gravity="center"
+            android:text="直流桩"
+            android:textColor="@drawable/navigation_home_text_selector"
+            android:textSize="@dimen/text_size_14_sp"
+            android:textStyle="bold"
+            android:drawableRight="@mipmap/down" />
+
+        <RadioButton
+            android:id="@+id/rb_screen"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:button="@null"
+            android:gravity="center"
+            android:text="停车费"
+            android:textSize="@dimen/text_size_14_sp"
+            android:textColor="@drawable/navigation_home_text_selector"
+            android:textStyle="bold"
+            android:drawableRight="@mipmap/down" />
+
+    </RadioGroup>
+
+    <LinearLayout
+        android:id="@+id/ll_filter"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_50"
+        android:background="@color/colorWhite"
+        android:visibility="visible">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="位置区域"
+                android:textSize="@dimen/text_size_13_sp"
+                android:textColor="#FF101734"/>
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@mipmap/down"
+                android:scaleType="centerCrop"
+                android:layout_marginLeft="@dimen/dp_10"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="价格最低"
+                android:textSize="@dimen/text_size_13_sp"
+                android:textColor="#FF101734"/>
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@mipmap/down"
+                android:scaleType="centerCrop"
+                android:layout_marginLeft="@dimen/dp_10"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="详情筛选"
+                android:textSize="@dimen/text_size_13_sp"
+                android:textColor="#FF101734"/>
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@mipmap/down"
+                android:scaleType="centerCrop"
+                android:layout_marginLeft="@dimen/dp_10"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <com.scwang.smartrefresh.layout.SmartRefreshLayout
+        android:id="@+id/mSmartRefreshLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <com.scwang.smartrefresh.layout.header.ClassicsHeader
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+        </com.scwang.smartrefresh.layout.header.ClassicsHeader>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:id="@+id/rl_stie"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <LinearLayout
+                    android:id="@+id/ll_stie"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:gravity="center"
+                    android:visibility="gone">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@mipmap/nor_personal"
+                        android:scaleType="center"
+                        android:layout_gravity="center"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="暂无内容~"
+                        android:textSize="15sp"
+                        android:textColor="#FF707485"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="@dimen/dp_10"/>
+
+
+                </LinearLayout>
+
+                <ListView
+                    android:id="@+id/lv_site"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="@dimen/dp_8"
+                    android:fadingEdge="none"
+                    android:scrollingCache="false"
+                    android:cacheColorHint="#00000000"
+                    android:divider="@null"
+                    android:dividerHeight="0.5dp"
+                    android:overScrollMode="never"
+                    android:scrollbars="none"
+                    android:background="@color/colorBackground"/>
+
+            </RelativeLayout>
+
+            <LinearLayout
+                android:id="@+id/ll_fragment"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <FrameLayout
+                    android:id="@+id/site_frame"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" />
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <com.scwang.smartrefresh.layout.footer.ClassicsFooter
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+
+    </com.scwang.smartrefresh.layout.SmartRefreshLayout>
+
+</LinearLayout>

@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/colorWhite">
+
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@mipmap/msg"
+        android:scaleType="centerCrop"
+        android:tint="#4498F8"
+        android:layout_gravity="center"
+        android:layout_marginTop="@dimen/dp_80"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="我们将以短信的形式将验证码发送给您，注意查收短信信息"
+        android:textColor="#ff707485"
+        android:textSize="@dimen/text_size_17_sp"
+        android:layout_gravity="center"
+        android:layout_marginLeft="@dimen/dp_30"
+        android:layout_marginRight="@dimen/dp_30"
+        android:layout_marginTop="@dimen/dp_20"/>
+
+
+    <com.jyn.vcview.VerificationCodeView
+        android:id="@+id/verificationcodeview2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:vcv_et_bg="@drawable/et_code_test1"
+        app:vcv_et_cursor="@drawable/et_cursor"
+        app:vcv_et_cursor_visible="false"
+        app:vcv_et_inputType="number"
+        app:vcv_et_number="6"
+        app:vcv_et_spacing="6dp"
+        app:vcv_et_text_color="#4498F8"
+        app:vcv_et_text_size="6sp"
+        android:layout_marginTop="@dimen/dp_20"
+        android:layout_marginLeft="@dimen/dp_30"
+        android:layout_marginRight="@dimen/dp_30"/>
+
+    <TextView
+        android:id="@+id/tv_get_code"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="--秒后重新获取验证码"
+        android:textColor="#4498F8"
+        android:textSize="@dimen/text_size_16_sp"
+        android:layout_marginLeft="@dimen/dp_30"
+        android:layout_marginTop="@dimen/dimen_20_dp"/>
+
+</LinearLayout>

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#008577</color>
+    <color name="colorPrimaryDark">#00574B</color>
+    <color name="colorAccent">#D81B60</color>
+    
+    
+    <color name="colorBackground">#EEEEEE</color>
+    <color name="colorWhite">#FFFFFF</color>
+
+    <color name="colorTheme">#6EAFF9</color>
+
+
+    <color name="cp_divider">#E5E5E5</color>
+    <color name="cp_shadow">#AAEBEBEB</color>
+    <color name="cp_common_bg">#FAFAFA</color>
+    <color name="cp_content_bg">#F3F3F3</color>
+    <color name="cp_gray">#8c8c8c</color>
+    <color name="cp_gray_deep">#5c5c5c</color>
+    <color name="cp_alpha_gray">#CC646464</color>
+    <color name="cp_theme_gray">#646464</color>
+
+
+    <!--新版UI颜色-->
+    <!--标题文字-->
+    <color name="new_text_color">#FF101734</color>
+    <!--主要文字-->
+    <color name="new_main_text">#FF575C71</color>
+    <!--次要文字1-->
+    <color name="new_secondary_text_one">#707485</color>
+    <!--次要文字2-->
+    <color name="new_secondary_text_two">#9699A6</color>
+    <!--占位文字-->
+    <color name="new_placeholder_text">#DFE0E4</color>
+
+    <!--主色-->
+    <color name="new_main_color">#FF01CA7E</color>
+    <!--辅色-->
+    <color name="new_secondary_color">#FF7073</color>
+    <!--辅色1-->
+    <color name="new_secondary_color_one">#FF8A5B</color>
+    <!--辅色2-->
+    <color name="new_secondary_color_two">#08ABFE</color>
+    
+</resources>

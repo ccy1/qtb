@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+    <LinearLayout
+        android:id="@+id/ll_type"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/shape_map_single_bg">
+
+        <TextView
+            android:id="@+id/tv_Price"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="0.900"
+            android:textSize="@dimen/text_size_13_sp"
+            android:textColor="#FFFEFEFE"
+            android:background="@drawable/shape_map_single_tv_bg"
+            android:paddingTop="@dimen/dp_2"
+            android:paddingBottom="@dimen/dp_2"
+            android:paddingLeft="@dimen/dimen_5_dp"
+            android:paddingRight="@dimen/dimen_5_dp"/>
+
+        <TextView
+            android:id="@+id/tv_type"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="泥头车"
+            android:textSize="@dimen/text_size_13_sp"
+            android:textColor="#FF101734"
+            android:layout_marginLeft="@dimen/dimen_5_dp"
+            android:layout_marginRight="@dimen/dimen_5_dp"/>
+
+    </LinearLayout>
+
+
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="@dimen/dimen_10_dp">
+
+
+
+        <ImageView
+            android:id="@+id/iv_map_zy"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_marginTop="10dp"
+            android:src="@mipmap/map_jm"
+            android:visibility="gone"/>
+
+        <com.example.ntb.ui.util.ArcProgress
+            android:id="@+id/myProgress"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            app:degree="0"
+            app:borderWidth="4dp"
+            app:arcbgColor="#358fec"
+            android:layout_marginTop="4dp"
+            app:progressColor="#2ac540"
+            app:unprogresColor="#358fec"
+            app:arc_radius="15dp"
+            app:progressStyle="arc"
+            android:visibility="gone"/>
+
+    </RelativeLayout>
+
+</LinearLayout>

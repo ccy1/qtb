@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    >
+
+    <TextView
+        android:id="@+id/tv_sub_comment"
+        android:layout_width="@dimen/dimen_80_dp"
+        android:layout_height="wrap_content"
+        android:text="泥头车专用站"
+        android:textSize="@dimen/text_size_10_sp"
+        android:layout_marginRight="@dimen/dp_10"
+        android:textColor="#FF4498F8"
+        android:gravity="center"
+        android:background="@drawable/tag_bg_shape"
+        android:paddingTop="@dimen/dp_2"
+        android:paddingBottom="@dimen/dp_2" />
+
+</RelativeLayout>

@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginLeft="25dp"
+    android:layout_marginRight="25dp"
+    android:background="@drawable/charglist_bg_shape"
+    android:orientation="vertical" >
+
+    <TextView
+        android:id="@+id/tv_vu_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp_30"
+        android:gravity="center"
+        android:textColor="#FF101734"
+        android:textSize="@dimen/text_size_20_sp"
+        android:layout_marginBottom="@dimen/dp_30"/>
+
+    <TextView
+        android:id="@+id/tv_vu_des"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/dimen_15_dp"
+        android:clickable="true"
+        android:focusable="true"
+        android:maxLines="8"
+        android:padding="5dp"
+        android:scrollbarFadeDuration="2000"
+        android:scrollbarStyle="outsideOverlay"
+        android:scrollbars="vertical"
+        android:textColor="#FF101734"
+        android:textSize="@dimen/text_size_15_sp"
+        android:lineSpacingExtra="@dimen/dimen_10_dp"
+        android:textScaleX="1.2"
+        android:visibility="gone"/>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:layout_marginTop="5dp"
+        android:background="#FFEEEEEE" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/cancle_btn"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@drawable/cancle_selector_out_bg"
+            android:paddingBottom="5dp"
+            android:paddingTop="5dp"
+            android:text="稍后再说"
+            android:textColor="#FF101734"
+            android:textSize="@dimen/text_size_15_sp"/>
+
+        <View
+            android:id="@+id/view_l"
+            android:layout_width="0.5dp"
+            android:layout_height="match_parent"
+            android:background="#FFEEEEEE" />
+
+        <Button
+            android:id="@+id/ok_btn"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@drawable/selector_out_bg"
+            android:paddingBottom="5dp"
+            android:paddingTop="5dp"
+            android:text="立即更新"
+            android:textColor="#4498F8"
+            android:textSize="@dimen/text_size_15_sp"/>
+    </LinearLayout>
+
+</LinearLayout>

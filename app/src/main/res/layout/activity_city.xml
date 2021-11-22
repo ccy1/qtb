@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:fitsSystemWindows="true">
+
+    <com.example.ntb.ui.util.TitleBarLayout
+        android:id="@+id/titleBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorWhite"/>
+
+    <include layout="@layout/cp_view_search"/>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@android:color/white">
+
+        <TextView
+            android:id="@+id/tv_city"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="当前城市"
+            android:textColor="#FF101734"
+            android:textSize="@dimen/text_size_15_sp"
+            android:padding="@dimen/dimen_10_dp" />
+
+        <ListView
+            android:layout_below="@id/tv_city"
+            android:id="@+id/listview_all_city"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:cacheColorHint="@android:color/transparent"
+            android:listSelector="@android:color/transparent"
+            android:divider="@android:color/transparent"
+            android:dividerHeight="0dp"/>
+
+        <TextView
+            android:id="@+id/tv_letter_overlay"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:gravity="center"
+            android:layout_centerInParent="true"
+            android:background="@drawable/cp_overlay_bg"
+            android:textSize="48sp"
+            android:textStyle="bold"
+            android:textColor="@android:color/white"
+            android:visibility="gone"/>
+
+        <com.example.ntb.ui.util.SideLetterBar
+            android:id="@+id/side_letter_bar"
+            android:layout_width="@dimen/dp_36"
+            android:layout_height="match_parent"
+            android:layout_alignParentRight="true"
+            android:layout_marginBottom="@dimen/dimen_5_dp"
+            tools:ignore="RtlHardcoded" />
+
+        <ListView
+            android:id="@+id/listview_search_result"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@android:color/white"
+            android:cacheColorHint="@android:color/transparent"
+            android:listSelector="@android:color/transparent"
+            android:divider="@android:color/transparent"
+            android:dividerHeight="0dp"
+            android:visibility="gone"/>
+
+        <include layout="@layout/cp_view_no_search_result" />
+
+        <TextView
+            android:id="@+id/tv_prompt"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:text="暂无可选城市!"
+            android:textColor="#a6a6a6"
+            android:textSize="@dimen/text_size_18_sp"
+            android:visibility="gone" />
+
+        <include
+            android:visibility="gone"
+            layout="@layout/view_empty_layout"/>
+
+    </RelativeLayout>
+
+</LinearLayout>

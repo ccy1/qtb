@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorBackground"
+    android:fitsSystemWindows="true">
+
+    <com.example.ntb.ui.util.NoScrollViewPager
+        android:id="@+id/viewPager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/radioGroup">
+
+    </com.example.ntb.ui.util.NoScrollViewPager>
+
+
+    <RadioGroup
+        android:id="@+id/radioGroup"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_alignParentBottom="true"
+        android:background="@color/colorWhite"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:id="@+id/ll_home"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical"
+            >
+            <RadioButton
+                android:id="@+id/rb_home"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@null"
+                android:button="@null"
+                android:checked="true"
+                android:textSize="11sp"
+                android:textColor="@drawable/navigation_home_text_selector"
+                android:drawableTop="@drawable/navigation_home_bg_selector"
+                android:drawablePadding="3dp"
+                android:text="首页"
+                />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/ll_map"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical"
+            >
+            <RadioButton
+                android:id="@+id/rb_map"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@null"
+                android:button="@null"
+                android:textSize="11sp"
+                android:textColor="@drawable/navigation_home_text_selector"
+                android:drawableTop="@drawable/navigation_map_bg_selector"
+                android:drawablePadding="3dp"
+                android:text="充电地图" />
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:id="@+id/ll_my"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <RadioButton
+                android:id="@+id/rb_my"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@null"
+                android:button="@null"
+                android:textSize="11sp"
+                android:textColor="@drawable/navigation_home_text_selector"
+                android:drawableTop="@drawable/navigation_my_bg_selector"
+                android:drawablePadding="3dp"
+                android:text="我的"
+                />
+
+        </LinearLayout>
+
+    </RadioGroup>
+
+</RelativeLayout>

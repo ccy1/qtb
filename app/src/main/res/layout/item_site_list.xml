@@ -1,0 +1,312 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="@drawable/charglist_bg_shape"
+        android:layout_marginBottom="@dimen/dimen_8_dp"
+        android:layout_marginLeft="@dimen/dp_12"
+        android:layout_marginRight="@dimen/dp_12"
+        android:elevation="@dimen/dp_2">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:layout_marginLeft="@dimen/dp_16">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/tv_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="粤能狮头岭工业区充电站"
+                    android:textSize="@dimen/text_size_16_sp"
+                    android:textColor="#FF101734"
+                    android:textStyle="bold"
+                    android:layout_weight="1"
+                    android:singleLine="true"
+                    android:ellipsize="end"
+                    android:layout_gravity="center"
+                    android:paddingTop="@dimen/dp_10"
+                    android:paddingBottom="@dimen/dp_10"/>
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@mipmap/un_collect"
+                    android:scaleType="centerCrop"
+                    android:layout_gravity="center"
+                    android:padding="@dimen/dp_10"
+                    android:layout_marginRight="@dimen/dp_6"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="@dimen/dp_16">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="营业中 | "
+                    android:textSize="@dimen/text_size_13_sp"
+                    android:textColor="#FF575C71"
+                    android:gravity="center" />
+
+                <TextView
+                    android:id="@+id/tv_open_time"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="00:00-24:00"
+                    android:textSize="@dimen/text_size_13_sp"
+                    android:textColor="#FF575C71" />
+
+                <TextView
+                    android:id="@+id/tv_parkingSubsidy"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=""
+                    android:textSize="@dimen/text_size_13_sp"
+                    android:textColor="#FF575C71"
+                    android:singleLine="true"
+                    android:ellipsize="end"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_10">
+
+                <com.example.ntb.ui.util.NoScrollGridView
+                    android:id="@+id/gv_tag"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:verticalSpacing="@dimen/dp_8"
+                    android:numColumns="4"
+                    android:scrollbars="none"
+                    android:stretchMode="columnWidth"
+                    android:overScrollMode="never" />
+
+
+                <!--<TextView-->
+                    <!--android:layout_width="wrap_content"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:text="泥头车专用站"-->
+                    <!--android:textSize="@dimen/text_size_10_sp"-->
+                    <!--android:textColor="#FF01CA7E"-->
+                    <!--android:background="@drawable/tag_bg_shape"-->
+                    <!--android:paddingTop="@dimen/dp_4"-->
+                    <!--android:paddingBottom="@dimen/dp_4"-->
+                    <!--android:paddingLeft="@dimen/dp_10"-->
+                    <!--android:paddingRight="@dimen/dp_10"/>-->
+
+                <!--<TextView-->
+                    <!--android:layout_width="wrap_content"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:text="无油车占位"-->
+                    <!--android:textSize="@dimen/text_size_10_sp"-->
+                    <!--android:textColor="#FF4498F8"-->
+                    <!--android:gravity="center"-->
+                    <!--android:layout_marginLeft="@dimen/dp_10"-->
+                    <!--android:background="@drawable/tag_two_bg_shape"-->
+                    <!--android:paddingTop="@dimen/dp_4"-->
+                    <!--android:paddingBottom="@dimen/dp_4"-->
+                    <!--android:paddingLeft="@dimen/dp_10"-->
+                    <!--android:paddingRight="@dimen/dp_10" />-->
+
+                <!--<TextView-->
+                    <!--android:layout_width="wrap_content"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:text="休息室"-->
+                    <!--android:textSize="@dimen/text_size_10_sp"-->
+                    <!--android:textColor="#FF4498F8"-->
+                    <!--android:gravity="center"-->
+                    <!--android:layout_marginLeft="@dimen/dp_10"-->
+                    <!--android:background="@drawable/tag_two_bg_shape"-->
+                    <!--android:paddingTop="@dimen/dp_4"-->
+                    <!--android:paddingBottom="@dimen/dp_4"-->
+                    <!--android:paddingLeft="@dimen/dp_10"-->
+                    <!--android:paddingRight="@dimen/dp_10" />-->
+                <!---->
+                <!--<TextView-->
+                    <!--android:layout_width="wrap_content"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:text="洗手间"-->
+                    <!--android:textSize="@dimen/text_size_10_sp"-->
+                    <!--android:textColor="#FF4498F8"-->
+                    <!--android:gravity="center"-->
+                    <!--android:layout_marginLeft="@dimen/dp_10"-->
+                    <!--android:background="@drawable/tag_two_bg_shape"-->
+                    <!--android:paddingTop="@dimen/dp_4"-->
+                    <!--android:paddingBottom="@dimen/dp_4"-->
+                    <!--android:paddingLeft="@dimen/dp_10"-->
+                    <!--android:paddingRight="@dimen/dp_10" />-->
+                <!---->
+                <!--<TextView-->
+                    <!--android:layout_width="wrap_content"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:text="有人值守"-->
+                    <!--android:textSize="@dimen/text_size_10_sp"-->
+                    <!--android:textColor="#FF4498F8"-->
+                    <!--android:gravity="center"-->
+                    <!--android:layout_marginLeft="@dimen/dp_8"-->
+                    <!--android:background="@drawable/tag_two_bg_shape"-->
+                    <!--android:paddingTop="@dimen/dp_4"-->
+                    <!--android:paddingBottom="@dimen/dp_4"-->
+                    <!--android:paddingLeft="@dimen/dp_10"-->
+                    <!--android:paddingRight="@dimen/dp_10"-->
+                    <!--android:visibility="gone"/>-->
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_10">
+
+                <TextView
+                    android:id="@+id/tv_price"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="0.0000"
+                    android:textSize="@dimen/text_size_20_sp"
+                    android:textColor="#FF101734"
+                    android:textStyle="bold"
+                    />
+
+                <TextView
+                    android:id="@+id/tv_service"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="元/度(含服务费)1.0900元/度"
+                    android:textSize="@dimen/text_size_13_sp"
+                    android:textColor="#575C71"
+                    android:layout_gravity="center"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/ll_discount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_10"
+                android:background="@drawable/view_down_shape"
+                android:visibility="gone">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@mipmap/view_down"
+                    android:scaleType="centerCrop"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="@dimen/dp_5"
+                    android:paddingTop="@dimen/dimen_6_dp"
+                    android:paddingBottom="@dimen/dp_6"/>
+
+                <TextView
+                    android:id="@+id/tv_discount"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="直降0.400元/度"
+                    android:textSize="@dimen/dp_10"
+                    android:textColor="#ff705a"
+                    android:layout_marginLeft="@dimen/dp_5"
+                    android:layout_marginRight="@dimen/dp_6"
+                    android:layout_gravity="center"
+                    />
+
+            </LinearLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:layout_alignParentLeft="true">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@mipmap/fast"
+                        android:scaleType="centerCrop"
+                        android:layout_gravity="center"/>
+
+                    <TextView
+                        android:id="@+id/tv_fast_number"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="6/28"
+                        android:textSize="@dimen/text_size_13_sp"
+                        android:textColor="#FF707485"
+                        android:layout_marginLeft="@dimen/dp_5"
+                        android:layout_gravity="center"/>
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@mipmap/slow"
+                        android:scaleType="centerCrop"
+                        android:layout_gravity="center"
+                        android:layout_marginLeft="@dimen/dp_10"/>
+
+                    <TextView
+                        android:id="@+id/tv_show_number"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="6/28"
+                        android:textSize="@dimen/text_size_13_sp"
+                        android:textColor="#FF707485"
+                        android:layout_marginLeft="@dimen/dp_5"
+                        android:layout_gravity="center"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/ll_nav"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="@dimen/dp_10"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginRight="@dimen/dp_6">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@mipmap/navigation"
+                        android:scaleType="centerCrop"
+                        android:layout_gravity="center"
+                        android:layout_marginRight="@dimen/dp_6"/>
+
+                    <TextView
+                        android:id="@+id/tv_distance"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="3.7km"
+                        android:textSize="@dimen/text_size_13_sp"
+                        android:textColor="#FF4498F8"
+                        android:layout_gravity="center"
+                        android:layout_marginRight="@dimen/dp_6"/>
+
+                </LinearLayout>
+
+            </RelativeLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</LinearLayout>

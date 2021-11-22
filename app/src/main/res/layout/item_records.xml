@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/dp_86"
+    android:orientation="vertical"
+    >
+
+    <TextView
+        android:id="@+id/tv_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="充电"
+        android:textSize="15sp"
+        android:textColor="#FF101734"
+        android:layout_marginLeft="@dimen/dp_16"
+        android:layout_marginTop="@dimen/dp_20"/>
+
+    <TextView
+        android:id="@+id/tv_money"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="-79.25"
+        android:textSize="17sp"
+        android:textColor="#FF101734"
+        android:layout_centerInParent="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="@dimen/dp_16"/>
+
+    <TextView
+        android:id="@+id/tv_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="2021-10-27 14:23:15"
+        android:textSize="12sp"
+        android:textColor="#FF707485"
+        android:layout_alignParentBottom="true"
+        android:layout_marginLeft="@dimen/dp_16"
+        android:layout_marginBottom="@dimen/dp_20"/>
+
+
+</RelativeLayout>

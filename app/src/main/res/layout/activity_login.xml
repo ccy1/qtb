@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorWhite">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="@dimen/dp_23"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_23"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="登陆/注册"
+                android:textColor="#FF101734"
+                android:textSize="20sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_12"
+                android:text="未注册过的手机号将自动创建账号"
+                android:textColor="#FFB3B5BE"
+                android:textSize="@dimen/text_size_12_sp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/dp_25"
+            android:layout_marginTop="@dimen/dp_100"
+            android:focusableInTouchMode="true">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="86"
+                android:textColor="#FF101734"
+                android:textSize="@dimen/text_size_18_sp" />
+
+            <ImageView
+                android:layout_width="@dimen/dimen_15_dp"
+                android:layout_height="@dimen/dimen_15_dp"
+                android:layout_gravity="center"
+                android:layout_marginLeft="@dimen/dp_8"
+                android:scaleType="centerCrop"
+                android:src="@mipmap/xb" />
+
+            <EditText
+                android:id="@+id/et_phone"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/dp_15"
+                android:background="@null"
+                android:hint="请输入手机号码"
+                android:inputType="phone"
+                android:maxLength="11"
+                android:textColorHighlight="#FFDFE0E4"
+                android:textSize="@dimen/text_size_18_sp" />
+
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="@dimen/dp_20"
+            android:layout_marginRight="@dimen/dp_30"
+            android:background="#F5F6FA" />
+
+
+        <Button
+            android:id="@+id/btn_ok"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_45"
+            android:layout_marginTop="@dimen/dp_20"
+            android:layout_marginRight="@dimen/dp_30"
+            android:background="@drawable/btn_shape_un_bg"
+            android:text="下一步"
+            android:textColor="@color/colorWhite"
+            android:textSize="@dimen/text_size_16_sp" />
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerInParent="true"
+        android:layout_marginBottom="@dimen/dp_50">
+
+        <CheckBox
+            android:id="@+id/cb_checkBox"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="false"
+            android:button="@drawable/new_cb_bg"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="注册或登录即代表阅读并同意"
+            android:textSize="15sp"
+            android:textColor="#FF9699A6"
+            android:layout_marginLeft="@dimen/dp_8"/>
+
+        <TextView
+            android:id="@+id/tv_protocol"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="《服务协议》"
+            android:textSize="@dimen/text_size_15_sp"
+            android:textColor="#4498F8" />
+
+    </LinearLayout>
+
+</RelativeLayout>

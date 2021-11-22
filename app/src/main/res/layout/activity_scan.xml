@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/colorBackground"
+    android:orientation="vertical">
+
+
+    <com.journeyapps.barcodescanner.DecoratedBarcodeView
+        android:id="@+id/bv_barcode"
+        android:layout_width="250dp"
+        android:layout_height="250dp"
+        app:zxing_scanner_layout="@layout/layout_zxing"
+        android:layout_gravity="center"
+        android:layout_marginTop="@dimen/dimen_50_dp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="请对准二维码开始扫描"
+        android:textColor="#FF575C71"
+        android:layout_alignBottom="@+id/bv_barcode"
+        android:layout_gravity="center"
+        android:layout_marginTop="@dimen/dimen_10_dp"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:layout_weight="1"
+        android:visibility="visible"
+        android:gravity="center">
+
+        <RadioButton
+            android:id="@+id/rb_light"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@null"
+            android:button="@null"
+            android:checked="false"
+            android:drawableTop="@drawable/scan_bg_selector"
+            android:drawablePadding="@dimen/dimen_3_dp"
+            android:text="轻触开灯"
+            android:textSize="@dimen/text_size_12_sp"
+            android:layout_marginTop="@dimen/dimen_2_dp"/>
+
+    </LinearLayout>
+
+
+</LinearLayout>

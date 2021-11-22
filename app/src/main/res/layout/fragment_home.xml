@@ -1,0 +1,282 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/colorBackground">
+
+
+    <com.scwang.smartrefresh.layout.SmartRefreshLayout
+        android:id="@+id/mSmartRefreshLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <com.scwang.smartrefresh.layout.header.ClassicsHeader
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+        </com.scwang.smartrefresh.layout.header.ClassicsHeader>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_134"
+                android:background="@mipmap/team_bg"
+                android:layout_marginLeft="@dimen/dp_12"
+                android:layout_marginRight="@dimen/dp_12">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_gravity="center">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/dp_16">
+
+                        <TextView
+                            android:id="@+id/tv_memberName"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="未登录"
+                            android:textSize="14sp"
+                            android:textColor="@color/colorWhite" />
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@mipmap/team"
+                            android:scaleType="centerCrop"
+                            android:layout_marginLeft="@dimen/dp_8"/>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/dp_16"
+                        android:layout_marginTop="@dimen/dp_10">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="￥"
+                            android:textSize="11sp"
+                            android:textColor="@color/colorWhite"
+                            android:gravity="center" />
+
+                        <TextView
+                            android:id="@+id/tv_accountBalance"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="0.00"
+                            android:textSize="@dimen/text_size_22_sp"
+                            android:textColor="@color/colorWhite"
+                            android:gravity="center" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginTop="@dimen/dp_10">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:orientation="vertical"
+                            android:gravity="center">
+
+                            <TextView
+                                android:id="@+id/tv_dailyPower"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="0kw.h"
+                                android:textSize="14sp"
+                                android:textColor="@color/colorWhite" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="今日电量"
+                                android:textSize="12sp"
+                                android:textColor="@color/colorWhite"
+                                android:layout_marginTop="@dimen/dp_8"/>
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:orientation="vertical"
+                            android:gravity="center">
+
+                            <TextView
+                                android:id="@+id/tv_monthPower"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="0kw.h"
+                                android:textSize="14sp"
+                                android:textColor="@color/colorWhite" />
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="本月电量"
+                                android:textSize="12sp"
+                                android:textColor="@color/colorWhite"
+                                android:layout_marginTop="@dimen/dp_8"/>
+
+                        </LinearLayout>
+
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:orientation="vertical"
+                            android:gravity="center">
+
+                            <TextView
+                                android:id="@+id/tv_monthConsumption"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="￥0"
+                                android:textSize="14sp"
+                                android:textColor="@color/colorWhite" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="本月金额"
+                                android:textSize="12sp"
+                                android:textColor="@color/colorWhite"
+                                android:layout_marginTop="@dimen/dp_8"/>
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/dp_28"
+                android:layout_marginTop="@dimen/dp_12">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@mipmap/view"
+                    android:scaleType="centerCrop"
+                    android:layout_gravity="center"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="充电中"
+                    android:textSize="16sp"
+                    android:textColor="#FF101734"
+                    android:layout_marginLeft="@dimen/dp_8"
+                    android:textStyle="bold"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:id="@+id/ll_home"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:gravity="center"
+                    android:focusable="false"
+                    android:visibility="gone">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@mipmap/nor_personal"
+                        android:scaleType="center"
+                        android:layout_gravity="center"
+                        android:visibility="visible"/>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:padding="@dimen/dp_10">
+
+                        <TextView
+                            android:id="@+id/tv"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="暂未登录,"
+                            android:textSize="@dimen/text_size_16_sp"
+                            android:textColor="#FF575C71"
+                            />
+
+                        <TextView
+                            android:id="@+id/tv_login"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="去登录>"
+                            android:textSize="@dimen/text_size_16_sp"
+                            android:textColor="#4498F8" />
+
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <ListView
+                    android:id="@+id/lv_home"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="@dimen/dp_8"
+                    android:fadingEdge="none"
+                    android:scrollingCache="false"
+                    android:cacheColorHint="#00000000"
+                    android:divider="@null"
+                    android:dividerHeight="0.5dp"
+                    android:overScrollMode="never"
+                    android:scrollbars="none"
+                    android:background="@color/colorBackground"/>
+
+            </LinearLayout>
+
+            <ImageView
+                android:id="@+id/iv_scan"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@mipmap/scan"
+                android:scaleType="centerCrop"
+                android:layout_marginBottom="@dimen/dp_3"
+                android:visibility="visible"
+                android:layout_gravity="center"/>
+
+        </LinearLayout>
+
+        <com.scwang.smartrefresh.layout.footer.ClassicsFooter
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+    </com.scwang.smartrefresh.layout.SmartRefreshLayout>
+
+
+</LinearLayout>
