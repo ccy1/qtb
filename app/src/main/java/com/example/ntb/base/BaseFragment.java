@@ -19,6 +19,8 @@ import android.view.WindowManager;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.ntb.ui.R;
+
 import butterknife.ButterKnife;
 import butterknife.Unbinder;
 
@@ -120,6 +122,7 @@ public abstract class BaseFragment extends Fragment implements View.OnClickListe
         super.onHiddenChanged(hidden);
     }
 
+    @RequiresApi(api = Build.VERSION_CODES.KITKAT_WATCH)
     @Override
     public void onPause() {
         if (isExtend) {
@@ -133,6 +136,7 @@ public abstract class BaseFragment extends Fragment implements View.OnClickListe
         super.onPause();
     }
 
+    @RequiresApi(api = Build.VERSION_CODES.KITKAT_WATCH)
     @Override
     public void onResume() {
         if (isExtend) {
@@ -156,6 +160,25 @@ public abstract class BaseFragment extends Fragment implements View.OnClickListe
         }
     }
 
+
+    /**
+     * 修改显示的内容 不会重新加载
+     **/
+    public void switchContentAndAddToBackStack(Fragment to, String fragmentTag) {
+        Fragment mContent = this;
+        if (mContent != to) {
+
+            FragmentTransaction transaction = getActivity().getSupportFragmentManager().beginTransaction();
+            transaction.setCustomAnimations(R.anim.slide_in_left, R.anim.slide_out_left, R.anim.slide_in_right,
+                    R.anim.slide_out_right);
+            transaction.addToBackStack(fragmentTag);
+            if (!to.isAdded()) { // 先判断是否被add过
+                transaction.hide(mContent).add(R.id.set, to, fragmentTag).commit(); // 隐藏当前的fragment，add下一个到Activity中
+            } else {
+                transaction.hide(mContent).show(to).commit(); // 隐藏当前的fragment，显示下一个
+            }
+        }
+    }
     /**
      * 退出当前Fragment
      */

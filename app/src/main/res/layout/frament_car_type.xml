@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    >
+
+    <com.example.ntb.ui.util.TitleBarLayout
+        android:id="@+id/titleBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorWhite"/>
+
+
+    <android.support.v4.widget.DrawerLayout
+        android:id="@+id/drawer_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@android:color/white">
+
+
+            <TextView
+                android:id="@+id/tv_prompt"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:visibility="gone"
+                android:textSize="@dimen/text_size_15_sp"
+                android:textColor="#a6a6a6"
+                android:text="暂无可选车辆"
+                />
+
+            <ListView
+                android:id="@+id/listview_all_city"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:cacheColorHint="@android:color/transparent"
+                android:listSelector="@android:color/transparent"
+                android:divider="@android:color/transparent"
+                android:dividerHeight="0dp"
+                />
+
+            <TextView
+                android:id="@+id/tv_letter_overlay"
+                android:layout_width="120dp"
+                android:layout_height="120dp"
+                android:gravity="center"
+                android:layout_centerInParent="true"
+                android:background="@drawable/cp_overlay_bg"
+                android:textSize="48sp"
+                android:textStyle="bold"
+                android:textColor="@android:color/white"
+                android:visibility="gone"/>
+
+            <com.example.ntb.ui.util.SideLetterBar
+                android:id="@+id/side_letter_bar"
+                android:layout_width="@dimen/side_letter_bar_width"
+                android:layout_height="match_parent"
+                android:layout_alignParentRight="true"
+                android:layout_marginBottom="@dimen/dimen_5_dp"
+                tools:ignore="RtlHardcoded" />
+
+            <ListView
+                android:id="@+id/listview_search_result"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@android:color/white"
+                android:cacheColorHint="@android:color/transparent"
+                android:listSelector="@android:color/transparent"
+                android:divider="@android:color/transparent"
+                android:dividerHeight="0dp"
+                android:visibility="gone"/>
+
+            <include layout="@layout/cp_view_no_search_result" />
+
+            <include
+                android:visibility="gone" layout="@layout/view_empty_layout"/>
+        </RelativeLayout>
+
+        <!-- 右侧滑动栏 -->
+        <LinearLayout
+            android:id="@+id/main_right_drawer_layout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="end"
+            android:layout_marginLeft="@dimen/dimen_60_dp"
+            android:background="@color/colorBackground"
+            android:orientation="vertical"
+            >
+
+            <TextView
+                android:id="@+id/tv_carName"
+                style="@style/LetterIndexTextViewStyle"
+                android:textSize="@dimen/text_size_15_sp"
+                android:clickable="false"/>
+
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/recyclerView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"/>
+        </LinearLayout>
+
+    </android.support.v4.widget.DrawerLayout>
+
+
+</LinearLayout>

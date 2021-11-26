@@ -123,12 +123,14 @@ public class Okhttp3Util {
                 if (dialog != null){
                     dialog.dismiss();
                 }
+                LoadUtils.dissmissWaitProgress();
             }
             @Override
             public void onResponse(Call call, Response response) throws IOException {
                 if (dialog != null){
                     dialog.dismiss();
                 }
+                LoadUtils.dissmissWaitProgress();
                 try {
                     if (response.isSuccessful() && response.code() == 200) {
                         String json = response.body().string();
@@ -143,6 +145,7 @@ public class Okhttp3Util {
                     callback.Failure("数据格式有误");
                     Log.d("Catch",throwable.toString());
                 }
+
             }
         });
     }
@@ -189,7 +192,6 @@ public class Okhttp3Util {
                 Log.d("请求路径",url+"====入参===="+map.toString()+"====出参===="+json);
                 try {
                     if (response.isSuccessful() && response.code() == 200) {
-                        Log.d("请求路径",url+"出参："+json);
                         if (!TextUtils.isEmpty(json)){
                             callback.Successful(json);
                         }

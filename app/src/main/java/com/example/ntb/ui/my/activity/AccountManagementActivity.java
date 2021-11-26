@@ -3,36 +3,32 @@ package com.example.ntb.ui.my.activity;
 import android.graphics.Color;
 import android.os.Build;
 import android.text.TextUtils;
-import android.util.JsonReader;
 import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.TextView;
-
 import com.example.ntb.app.App;
 import com.example.ntb.base.BaseActivity;
+import com.example.ntb.base.RequestURL;
 import com.example.ntb.mvp.presenter.BasePresenter;
 import com.example.ntb.mvp.view.BaseView;
 import com.example.ntb.ui.R;
-import com.example.ntb.ui.home.activity.MainActivity;
 import com.example.ntb.ui.my.adapter.RecordsAdapter;
 import com.example.ntb.ui.my.bean.JsonQuerRevenue;
 import com.example.ntb.ui.my.bean.PersonInfo;
-import com.example.ntb.ui.site.bean.JsonReservation;
+import com.example.ntb.ui.util.SPUtils;
 import com.example.ntb.ui.util.TitleBarLayout;
-import com.example.ntb.ui.util.ToastUtil;
 import com.google.gson.Gson;
-import com.google.gson.JsonParseException;
 import com.google.gson.reflect.TypeToken;
-
+import com.scwang.smartrefresh.layout.SmartRefreshLayout;
+import com.scwang.smartrefresh.layout.api.RefreshLayout;
+import com.scwang.smartrefresh.layout.listener.OnRefreshListener;
 import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-
 import butterknife.BindView;
-
 import static com.example.ntb.ui.util.StatusBarUtil.setAndroidNativeLightStatusBar;
 import static com.example.ntb.ui.util.StatusBarUtil.setStatusBarColor;
 
@@ -52,8 +48,13 @@ public class AccountManagementActivity extends BaseActivity implements BaseView 
     @BindView(R.id.tv_money)
     TextView tv_money;
 
-    private BasePresenter basePresenter = new BasePresenter(this,this);
+    @BindView(R.id.ll_show)
+    LinearLayout ll_show;
 
+    @BindView(R.id.mSmartRefreshLayout)
+    SmartRefreshLayout mRefreshLayout;
+
+    private BasePresenter basePresenter = new BasePresenter(this,this);
     private RecordsAdapter recordsAdapter;
     private List<JsonQuerRevenue.DataBean.RevenuelistBean> list = new ArrayList<>();
 
@@ -84,7 +85,7 @@ public class AccountManagementActivity extends BaseActivity implements BaseView 
         }
         titleBar.setTitle("账户管理");
         titleBar.setBackOnClick(this);
-        getData();
+
         recordsAdapter = new RecordsAdapter(this,list);
         lv_records.setAdapter(recordsAdapter);
 
@@ -94,12 +95,25 @@ public class AccountManagementActivity extends BaseActivity implements BaseView 
             String str = df1.format(Double.valueOf(personInfo.data.accountBalance)/100);
             tv_money.setText(str);
         }
+
+        mRefreshLayout.setEnableLoadMore(false);//是否启用上拉加载功能
+        mRefreshLayout.setOnRefreshListener(new OnRefreshListener() {
+            @Override
+            public void onRefresh(RefreshLayout refreshlayout) {
+                getData();
+            }
+        });
+    }
+
+    @Override
+    protected void getNetworkRequest() {
+        getData();
     }
 
     private void getData(){
-        String Url = "https://www.fastmock.site/mock/c2c1d23aaef5d6291972965ad02e2b47/ntb/querRevenue";
+        String Url = "http://"+RequestURL.new_Url+":"+RequestURL.new_Port+RequestURL.API+RequestURL.querRevenue;//收支记录（账户流水）
         Map<String,Object> map = new HashMap<>();
-        basePresenter.postRequesttoHead(this,Url,true,map,"",1);
+        basePresenter.postRequesttoHead(this,Url,false,map,SPUtils.getSharedStringData(AccountManagementActivity.this,"token"),1);
     }
 
     @Override
@@ -110,7 +124,6 @@ public class AccountManagementActivity extends BaseActivity implements BaseView 
                 break;
         }
     }
-
     @Override
     public void resultSucess(final int type, final String json) {
         runOnUiThread(new Runnable() {
@@ -122,14 +135,26 @@ public class AccountManagementActivity extends BaseActivity implements BaseView 
                         JsonQuerRevenue jsonReader = gson.fromJson(json.trim(),new TypeToken<JsonQuerRevenue>(){}.getType());
                         if (jsonReader.code == 0){
                             if (jsonReader.data.size != 0){
+                                lv_records.setVisibility(View.VISIBLE);
+                                ll_show.setVisibility(View.GONE);
+                                list.clear();
                                 for (JsonQuerRevenue.DataBean.RevenuelistBean item : jsonReader.data.revenuelist){
                                     list.add(item);
                                 }
                                 recordsAdapter.notifyDataSetChanged();
+                            }else {
+                                lv_records.setVisibility(View.GONE);
+                                ll_show.setVisibility(View.VISIBLE);
                             }
                         }else {
-                            ToastUtil.showToast(AccountManagementActivity.this,jsonReader.msg+"");
+                            ll_show.setVisibility(View.VISIBLE);
+                            lv_records.setVisibility(View.GONE);
+                            showShortToast(jsonReader.msg+"");
                         }
+                    }
+                    if (mRefreshLayout != null) {
+                        mRefreshLayout.finishRefresh();
+                        mRefreshLayout.finishLoadMore();
                     }
                 }
             }
@@ -141,7 +166,11 @@ public class AccountManagementActivity extends BaseActivity implements BaseView 
         runOnUiThread(new Runnable() {
             @Override
             public void run() {
-                ToastUtil.showToast(AccountManagementActivity.this,Msg+"");
+                showShortToast(Msg+"");
+                if (mRefreshLayout != null) {
+                    mRefreshLayout.finishRefresh();
+                    mRefreshLayout.finishLoadMore();
+                }
             }
         });
     }

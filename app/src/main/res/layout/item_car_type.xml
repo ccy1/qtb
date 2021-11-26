@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="#FFF"
+    android:orientation="vertical"
+    >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        >
+        <ImageView
+            android:id="@+id/iv_car"
+            android:layout_width="@dimen/dimen_50_dp"
+            android:layout_height="@dimen/dimen_40_dp"
+            android:layout_margin="@dimen/dimen_10_dp"
+            android:scaleType="fitXY"
+            android:src="@mipmap/success_car"
+            android:visibility="visible" />
+
+        <TextView
+            android:id="@+id/tv_carName"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center_vertical"
+            android:padding="@dimen/dp_10"
+            android:text="宝马"
+            android:textColor="@color/new_text_color"
+            android:textSize="@dimen/text_size_15_sp"
+            />
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:background="#FFEEEEEE"
+        android:layout_margin="@dimen/dimen_3_dp"
+        />
+
+
+
+</LinearLayout>

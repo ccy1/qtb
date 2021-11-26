@@ -69,6 +69,14 @@ public class ChargingListAdapter extends BaseAdapter {
         viewHolder.tv_chargedElectricity.setText(_list.get(i).chargedElectricity+"kw.h");
         viewHolder.tv_stationName.setText(_list.get(i).stationName+"");
         viewHolder.tv_startTime.setText(_list.get(i).startTime+"");
+
+        viewHolder.iv_pause.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                onItemListener.mOnItemListener(i,_list);
+            }
+        });
+
         return view;
     }
     public interface OnItemListener {

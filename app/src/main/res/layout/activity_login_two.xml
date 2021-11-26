@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/colorWhite">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="欢迎来到泥头宝"
+        android:textSize="18sp"
+        android:textColor="#FF101734"
+        android:layout_marginLeft="@dimen/dp_20"
+        android:layout_marginTop="@dimen/dp_50"
+        android:textStyle="bold" />
+
+    <EditText
+        android:id="@+id/et_phone"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_60"
+        android:layout_marginTop="@dimen/dp_50"
+        android:layout_marginLeft="@dimen/dp_20"
+        android:layout_marginRight="@dimen/dp_20"
+        android:hint="请输入手机号"
+        android:textColorHint="#DFE0E4"
+        android:textColor="@color/new_text_color"
+        android:inputType="phone"
+        android:textSize="@dimen/text_size_16_sp"
+        android:background="@null"
+        android:maxLength="11"/>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dimen_1_px"
+        android:background="#EEEEEE"
+        android:layout_marginLeft="@dimen/dp_12"
+        android:layout_marginRight="@dimen/dp_12"/>
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp_20"
+        android:layout_marginLeft="@dimen/dp_20"
+        android:layout_marginRight="@dimen/dp_20">
+
+
+        <EditText
+            android:id="@+id/et_passWord"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_60"
+            android:layout_weight="1"
+            android:hint="输入密码 (6-12位字母数字组合)"
+            android:textColorHint="#DFE0E4"
+            android:textColor="@color/new_text_color"
+            android:inputType="textPassword"
+            android:textSize="@dimen/text_size_16_sp"
+            android:background="@null"
+            android:maxLength="12"
+            android:minLines="6"/>
+
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dimen_1_px"
+            android:background="#EEEEEE"
+            android:layout_below="@+id/et_passWord"/>
+
+
+        <CheckBox
+            android:id="@+id/cb_passWord"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="false"
+            android:button="@drawable/password_cb_bg"
+            android:layout_centerInParent="true"
+            android:layout_alignParentRight="true"
+            android:padding="@dimen/dp_16"/>
+
+
+    </RelativeLayout>
+
+
+    <Button
+        android:id="@+id/btn_ok"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_45"
+        android:layout_margin="@dimen/dp_20"
+        android:background="@drawable/btn_shape_un_bg"
+        android:text="下一步"
+        android:textColor="@color/colorWhite"
+        android:textSize="@dimen/text_size_16_sp" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="@dimen/dp_20"
+        android:gravity="bottom"
+        android:layout_gravity="center">
+
+        <CheckBox
+            android:id="@+id/cb_checkBox"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="false"
+            android:button="@drawable/new_cb_bg"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="注册或登录即代表阅读并同意"
+            android:textSize="15sp"
+            android:textColor="#FF9699A6"
+            android:layout_marginLeft="@dimen/dp_8"/>
+
+        <TextView
+            android:id="@+id/tv_protocol"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="《服务协议》"
+            android:textSize="@dimen/text_size_15_sp"
+            android:textColor="#4498F8" />
+
+    </LinearLayout>
+
+
+
+</LinearLayout>

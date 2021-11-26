@@ -13,11 +13,14 @@ import com.example.ntb.base.RequestURL;
 import com.example.ntb.mvp.presenter.BasePresenter;
 import com.example.ntb.mvp.view.BaseView;
 import com.example.ntb.ui.R;
-import com.example.ntb.ui.login.activity.LoginActivity;
+import com.example.ntb.ui.login.activity.LoginActivityTwo;
+import com.example.ntb.ui.login.activity.ResetPasswordAciticity;
 import com.example.ntb.ui.my.activity.AccountManagementActivity;
+import com.example.ntb.ui.membermanagement.acticity.MemberManagementActivity;
 import com.example.ntb.ui.my.bean.JsonToken;
 import com.example.ntb.ui.my.bean.Jsonlogout;
 import com.example.ntb.ui.my.bean.PersonInfo;
+import com.example.ntb.ui.order.activity.MyOrderActivity;
 import com.example.ntb.ui.util.DialogUtils;
 import com.example.ntb.ui.util.EventBlack;
 import com.example.ntb.ui.util.LoadUtils;
@@ -25,6 +28,7 @@ import com.example.ntb.ui.util.SPUtils;
 import com.example.ntb.ui.util.ToastUtil;
 import com.example.ntb.ui.util.UserUtils;
 import com.example.ntb.ui.util.Utils;
+import com.example.ntb.ui.vehiclemanagement.acticity.VehicleManagementActivity;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 import com.scwang.smartrefresh.layout.SmartRefreshLayout;
@@ -70,7 +74,6 @@ public class MyFragment extends BaseFragment implements BaseView {
 
     @Override
     protected void getNetworkRequest() {
-
         token = SPUtils.getSharedStringData(getContext(),"token");
         Utils.out("token",token+"");
         if (!TextUtils.isEmpty(token)){
@@ -90,20 +93,49 @@ public class MyFragment extends BaseFragment implements BaseView {
         });
     }
 
-    @OnClick({R.id.ll_switchUser})
+    @OnClick({R.id.ll_switchUser,R.id.ll_resetPassword,R.id.ll_accountManagement,R.id.ll_memberManagement,R.id.ll_carManagement,R.id.ll_order})
     @Override
     public void onClick(View view) {
         switch (view.getId()){
             case R.id.ll_switchUser://账户管理
-//                if (!TextUtils.isEmpty(token)){
-//                    showDialog();//退出登录
-//                }else {
-//                    Intent intent = new Intent(getActivity(),LoginActivity.class);
-//                    startActivity(intent);
-//                }
-                Intent intent = new Intent(getContext(),AccountManagementActivity.class);
-                startActivity(intent);
-
+                if (!TextUtils.isEmpty(token)){
+                    showDialog();//退出登录
+                }
+                break;
+            case R.id.ll_resetPassword://密码重置
+                if (!TextUtils.isEmpty(token)){
+                    startActivity(new Intent(getActivity(),ResetPasswordAciticity.class));
+                }else {
+                    startActivity(new Intent(getActivity(),LoginActivityTwo.class));
+                }
+                break;
+            case R.id.ll_accountManagement://账户管理
+                if (!TextUtils.isEmpty(token)){
+                    startActivity(new Intent(getActivity(),AccountManagementActivity.class));
+                }else {
+                    startActivity(new Intent(getActivity(),LoginActivityTwo.class));
+                }
+                break;
+            case R.id.ll_memberManagement://成员管理
+                if (!TextUtils.isEmpty(token)){
+                    startActivity(new Intent(getActivity(),MemberManagementActivity.class));
+                }else {
+                    startActivity(new Intent(getActivity(),LoginActivityTwo.class));
+                }
+                break;
+            case R.id.ll_carManagement://车辆管理
+                if (!TextUtils.isEmpty(token)){
+                    startActivity(new Intent(getActivity(),VehicleManagementActivity.class));
+                }else {
+                    startActivity(new Intent(getActivity(),LoginActivityTwo.class));
+                }
+                break;
+            case R.id.ll_order://订单管理
+                if (!TextUtils.isEmpty(token)){
+                    startActivity(new Intent(getActivity(),MyOrderActivity.class));
+                }else {
+                    startActivity(new Intent(getActivity(),LoginActivityTwo.class));
+                }
                 break;
         }
     }
@@ -143,6 +175,11 @@ public class MyFragment extends BaseFragment implements BaseView {
             token = SPUtils.getSharedStringData(getContext(),"token");
             Utils.out("My","我的页面收到登录成功的通知"+"====token===="+token);
             getMemberInfo();//获取会员信息
+        }else if (event.getCode() == 1){
+            Utils.out("My","我的页收到退出成功的通知");
+            tv_name.setText("未登录");
+            tv_money.setText("0.00");
+            token = null;
         }
     }
 
@@ -188,14 +225,13 @@ public class MyFragment extends BaseFragment implements BaseView {
                             DecimalFormat df1 = new DecimalFormat("0.00");
                             String str = df1.format(Double.valueOf(personInfo.data.accountBalance)/100);
                             tv_money.setText(str);
-                            if (personInfo.data.memberType == 1){//成员
+                            if (personInfo.data.memberType == 0){//个人
+                                ll_memberManagement.setVisibility(View.GONE);
+                            }else if (personInfo.data.memberType == 1){//成员
                                 ll_memberManagement.setVisibility(View.GONE);
                             }else if (personInfo.data.memberType == 2){//车队
                                 ll_memberManagement.setVisibility(View.VISIBLE);
-                            }else {
-                                ll_memberManagement.setVisibility(View.GONE);
                             }
-
                         }else if (personInfo.code == 2){//token过期了
                             getToken();
                         }
@@ -217,7 +253,7 @@ public class MyFragment extends BaseFragment implements BaseView {
                 }else if (type == 3){
                     if (!TextUtils.isEmpty(json)){
                         Gson mGson = new Gson();
-                        final Jsonlogout jsonlogout = mGson.fromJson(json.trim().toString(), new TypeToken<Jsonlogout>() {
+                        final Jsonlogout jsonlogout = mGson.fromJson(json.trim(), new TypeToken<Jsonlogout>() {
                         }.getType());
                         if (jsonlogout.code == 0){
                             ToastUtil.showToast(getActivity(),jsonlogout.msg+"");
@@ -253,3 +289,4 @@ public class MyFragment extends BaseFragment implements BaseView {
         });
     }
 }
+

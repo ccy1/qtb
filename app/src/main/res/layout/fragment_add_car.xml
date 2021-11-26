@@ -1,0 +1,227 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/colorBackground">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_50"
+        android:background="@color/colorWhite">
+
+        <ImageView
+            android:id="@+id/iv_close"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@mipmap/close"
+            android:scaleType="centerCrop"
+            android:padding="@dimen/dp_20"/>
+
+        <TextView
+            android:id="@+id/tv_member_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="添加车辆"
+            android:textSize="17sp"
+            android:textColor="#333333"
+            android:textStyle="bold"
+            android:layout_centerInParent="true"/>
+
+        <TextView
+            android:id="@+id/btn_save"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="保存"
+            android:textSize="17sp"
+            android:textColor="#333333"
+            android:textStyle="bold"
+            android:layout_centerInParent="true"
+            android:layout_alignParentRight="true"
+            android:padding="@dimen/dp_16"
+            android:background="@color/colorWhite"/>
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/shape_round_white"
+        android:layout_marginLeft="@dimen/dp_12"
+        android:layout_marginRight="@dimen/dp_12"
+        android:layout_marginTop="@dimen/dp_8"
+        android:elevation="@dimen/dimen_2_dp"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:id="@+id/ll_add_car"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_57">
+
+            <TextView
+                android:layout_width="@dimen/dp_100"
+                android:layout_height="wrap_content"
+                android:text="爱车车型"
+                android:textSize="15sp"
+                android:textColor="#FF575C71"
+                android:layout_gravity="center"
+                android:layout_marginLeft="@dimen/dp_12"
+                android:textStyle="bold"/>
+
+            <TextView
+                android:id="@+id/tv_car_type"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:hint="请选择车型"
+                android:textColorHint="#B3B5BE"
+                android:textSize="@dimen/sp_15"
+                android:layout_marginLeft="@dimen/dp_12"
+                android:layout_gravity="center"/>
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@mipmap/go"
+                android:scaleType="centerCrop"
+                android:padding="@dimen/dp_16"
+                android:layout_gravity="center"/>
+
+
+
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dimen_1_px"
+            android:background="#EEEEEE"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_57">
+
+            <TextView
+                android:layout_width="@dimen/dp_100"
+                android:layout_height="wrap_content"
+                android:text="车牌号码"
+                android:textSize="15sp"
+                android:textColor="#FF575C71"
+                android:layout_gravity="center"
+                android:layout_marginLeft="@dimen/dp_12"
+                android:textStyle="bold"/>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginLeft="@dimen/dp_12">
+
+                <EditText
+                    android:id="@+id/et_province"
+                    android:layout_width="@dimen/dp_24"
+                    android:layout_height="@dimen/dp_24"
+                    android:background="@drawable/shape_et_bg"
+                    android:textSize="@dimen/text_size_12_sp"
+                    android:hint=""
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:textColor="@color/new_text_color"
+                    android:maxLength="1"/>
+
+                <EditText
+                    android:id="@+id/et_letter"
+                    android:layout_width="@dimen/dp_24"
+                    android:layout_height="@dimen/dp_24"
+                    android:background="@drawable/shape_et_bg"
+                    android:textSize="@dimen/text_size_12_sp"
+                    android:layout_marginLeft="@dimen/dp_8"
+                    android:hint=""
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:textColor="@color/new_text_color"
+                    android:maxLength="1"/>
+
+                <EditText
+                    android:id="@+id/et_number"
+                    android:layout_width="@dimen/dp_80"
+                    android:layout_height="@dimen/dp_24"
+                    android:background="@drawable/shape_et_bg"
+                    android:textSize="@dimen/text_size_12_sp"
+                    android:layout_marginLeft="@dimen/dp_8"
+                    android:hint=""
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:textColor="@color/new_text_color"
+                    android:maxLength="7"/>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dimen_1_px"
+            android:background="#EEEEEE"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_57">
+
+            <TextView
+                android:layout_width="@dimen/dp_100"
+                android:layout_height="wrap_content"
+                android:text="VIN码"
+                android:textSize="15sp"
+                android:textColor="#FF575C71"
+                android:layout_gravity="center"
+                android:layout_marginLeft="@dimen/dp_12"
+                android:textStyle="bold"/>
+
+            <EditText
+                android:id="@+id/et_vin"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@null"
+                android:hint="请输入vin码"
+                android:textColorHint="#B3B5BE"
+                android:textSize="@dimen/sp_15"
+                android:layout_marginLeft="@dimen/dp_15"/>
+
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dimen_1_px"
+            android:background="#EEEEEE"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_57">
+
+            <TextView
+                android:layout_width="@dimen/dp_100"
+                android:layout_height="wrap_content"
+                android:text="续航里程(KM)"
+                android:textSize="15sp"
+                android:textColor="#FF575C71"
+                android:layout_gravity="center"
+                android:layout_marginLeft="@dimen/dp_12"
+                android:textStyle="bold"/>
+
+            <EditText
+                android:id="@+id/et_mileage"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@null"
+                android:hint="请输入续航里程(必填)"
+                android:textColorHint="#B3B5BE"
+                android:textSize="@dimen/sp_15"
+                android:inputType="number"
+                android:layout_marginLeft="@dimen/dp_15"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+</LinearLayout>

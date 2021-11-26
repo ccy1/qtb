@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_57">
+
+        <ImageView
+            android:id="@+id/iv_icon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@mipmap/un_member"
+            android:scaleType="centerCrop"
+            android:layout_gravity="center"
+            android:layout_marginLeft="@dimen/dp_20"
+            android:layout_centerInParent="true"
+            android:layout_alignParentLeft="true"/>
+
+        <TextView
+            android:id="@+id/tv_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="泥头宝账户2"
+            android:textSize="14sp"
+            android:textColor="#FF575C71"
+            android:layout_toRightOf="@+id/iv_icon"
+            android:layout_centerInParent="true"
+            android:layout_marginLeft="@dimen/dimen_2_dp"/>
+
+        <ImageView
+            android:id="@+id/iv_yes"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@mipmap/yes"
+            android:scaleType="centerCrop"
+            android:layout_alignParentRight="true"
+            android:layout_centerInParent="true"
+            android:layout_marginRight="@dimen/dp_20"
+            android:visibility="gone"/>
+
+    </RelativeLayout>
+
+
+</LinearLayout>

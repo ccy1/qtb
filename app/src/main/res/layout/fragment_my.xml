@@ -88,6 +88,7 @@
                     android:layout_marginBottom="@dimen/dp_8">
 
                     <LinearLayout
+                        android:id="@+id/ll_order"
                         android:layout_width="match_parent"
                         android:layout_height="@dimen/dp_57">
 
@@ -118,6 +119,7 @@
                         android:background="#EEEEEE"/>
 
                     <LinearLayout
+                        android:id="@+id/ll_accountManagement"
                         android:layout_width="match_parent"
                         android:layout_height="@dimen/dp_57">
 
@@ -174,6 +176,7 @@
                         android:background="#EEEEEE"/>
 
                     <LinearLayout
+                        android:id="@+id/ll_carManagement"
                         android:layout_width="match_parent"
                         android:layout_height="@dimen/dp_57">
 
@@ -231,6 +234,7 @@
                         android:background="#EEEEEE"/>
 
                     <LinearLayout
+                        android:id="@+id/ll_resetPassword"
                         android:layout_width="match_parent"
                         android:layout_height="@dimen/dp_57">
 

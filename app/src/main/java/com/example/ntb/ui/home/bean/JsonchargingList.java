@@ -55,6 +55,9 @@ public class JsonchargingList {
             public String stationName;
             /** 时间 */
             public String startTime;
+
+            public int pileId;
+            public String gunNo;
         }
     }
 }

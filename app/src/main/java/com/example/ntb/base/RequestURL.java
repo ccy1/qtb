@@ -565,5 +565,50 @@ public class RequestURL {
      * 充电中list
      */
     public static String getMemberChargingList = "getMemberChargingList";
+
+    /**
+     * 登录
+     */
+    public static String login = "login";
+
+    /**
+     * 停止充电
+     */
+    public static String doRemoteStopCharge = "doRemoteStopCharge";
+
+    /**
+     * 添加车辆
+     */
+    public static String saveVehicle = "saveVehicle";
+
+    /**
+     * 查询车辆列表
+     */
+    public static String getMemberVehicle = "getMemberVehicle";
+
+    /**
+     * 删除车辆
+     */
+    public static String delVehicle = "delVehicle";
+
+    /**
+     * 重置密码
+     */
+    public static String restPassword = "restPassword";
+
+    /**
+     * 获取成员列表
+     */
+    public static String getMemberLeague = "getMemberLeague";
+
+    /**
+     * 添加成员
+     */
+    public static String saveMemberLeague = "saveMemberLeague";
+
+    /**
+     * 删除成员
+     */
+    public static String delMemberLeague = "delMemberLeague";
 }
 

@@ -30,10 +30,13 @@ import com.example.ntb.mvp.presenter.BasePresenter;
 import com.example.ntb.mvp.view.BaseView;
 import com.example.ntb.ui.R;
 import com.example.ntb.ui.home.adapter.ChargingListAdapter;
+import com.example.ntb.ui.home.bean.JsonBase;
 import com.example.ntb.ui.home.bean.JsonchargingList;
 import com.example.ntb.ui.home.bean.JsongetMemberInfo;
 import com.example.ntb.ui.login.activity.LoginActivity;
+import com.example.ntb.ui.login.activity.LoginActivityTwo;
 import com.example.ntb.ui.util.EventBlack;
+import com.example.ntb.ui.util.LoadUtils;
 import com.example.ntb.ui.util.SPUtils;
 import com.example.ntb.ui.util.ToastUtil;
 import com.example.ntb.ui.util.Utils;
@@ -52,8 +55,10 @@ import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import java.text.DecimalFormat;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Locale;
+import java.util.Map;
 
 /**
  * Created by ccy.
@@ -165,7 +170,6 @@ public class HomePageFragment extends Fragment implements BaseView,View.OnClickL
     private void getMemberChargingList() {
         String Url = "http://"+RequestURL.new_Url+":"+RequestURL.new_Port+RequestURL.API+RequestURL.getMemberChargingList;//获取充电中list
 //        String Url = "https://www.fastmock.site/mock/c2c1d23aaef5d6291972965ad02e2b47/ntb/api/chargingList";
-
         JSONObject obj = new JSONObject();
         try {
             obj.put("current",index);
@@ -175,6 +179,29 @@ public class HomePageFragment extends Fragment implements BaseView,View.OnClickL
         }
         basePresenter.jsonRequesttoHead(getActivity(),Url,false,obj.toString(),token+"",1);
     }
+
+    //点击暂停的回调
+    ChargingListAdapter.OnItemListener onItemListener = new ChargingListAdapter.OnItemListener() {
+        @Override
+        public void mOnItemListener(final int position, final List<JsonchargingList.DataBeanX.DataBean> data) {
+            getActivity().runOnUiThread(new Runnable() {
+                @Override
+                public void run() {
+                    String Url = "http://"+RequestURL.new_Url+":"+RequestURL.new_Port+RequestURL.API+RequestURL.doRemoteStopCharge;//停止充电
+                    JSONObject obj = new JSONObject();
+                    try {
+                        obj.put("pileId",data.get(position).pileId);
+                        obj.put("gunNo",data.get(position).gunNo+"");
+                    } catch (JSONException e) {
+                        e.printStackTrace();
+                    }
+                    LoadUtils.showWaitProgress(getActivity(),"正在停止充电中，请稍后...");
+                    basePresenter.jsonRequesttoHead(getActivity(),Url,false,obj.toString(),token+"",3);
+                }
+            });
+        }
+    };
+
 
     @Override
     public void resultSucess(final int type, final String json) {
@@ -229,6 +256,17 @@ public class HomePageFragment extends Fragment implements BaseView,View.OnClickL
                             tv_monthConsumption.setText("￥"+df.format(Double.valueOf(jsongetMemberInfo.data.monthConsumption)));
                         }
                     }
+                }else if (type == 3){
+                    if (!TextUtils.isEmpty(json)){
+                        Gson gson = new Gson();
+                        JsonBase jsonBase = gson.fromJson(json.trim(),new TypeToken<JsonBase>(){}.getType());
+                        if (jsonBase.code == 0){
+                            ToastUtil.showToast(getActivity(),jsonBase.msg+"");
+                            getMemberChargingList();
+                        }else {
+                            ToastUtil.showToast(getActivity(),jsonBase.msg+"");
+                        }
+                    }
                 }
             }
         });
@@ -256,29 +294,14 @@ public class HomePageFragment extends Fragment implements BaseView,View.OnClickL
     public void onClick(View view) {
         switch (view.getId()){
             case R.id.iv_scan:
-//                Intent intent = new Intent(getActivity(),LoginActivity.class);
+//                Intent intent = new Intent(getActivity(),LoginActivityTwo.class);
 //                startActivity(intent);
                 break;
             case R.id.ll_home:
-                Intent intent01 = new Intent(getActivity(),LoginActivity.class);
-                startActivity(intent01);
+                startActivity(new Intent(getActivity(),LoginActivityTwo.class));
                 break;
         }
     }
-
-
-    ChargingListAdapter.OnItemListener onItemListener = new ChargingListAdapter.OnItemListener() {
-        @Override
-        public void mOnItemListener(final int position, final List<JsonchargingList.DataBeanX.DataBean> data) {
-            getActivity().runOnUiThread(new Runnable() {
-                @Override
-                public void run() {
-                    ToastUtil.showToast(getActivity(),data.get(position).soc+"");
-                }
-            });
-        }
-    };
-
     @RequiresApi(api = Build.VERSION_CODES.JELLY_BEAN)
     @Subscribe
     public void EventBlacks(EventBlack event) {

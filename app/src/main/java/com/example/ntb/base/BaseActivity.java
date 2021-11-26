@@ -53,10 +53,12 @@ public abstract class BaseActivity extends FragmentActivity implements View.OnCl
                 titleBar.setLayoutParams(lp);
             }
         }
+        getNetworkRequest();
 
     }
 
-
+    protected void getNetworkRequest() {
+    }
     /**
      * 获取标题栏
      * @return

@@ -58,7 +58,7 @@
             android:windowSoftInputMode="adjustPan"/>
 
         <!--登录-->
-        <activity android:name=".login.activity.LoginActivity"
+        <activity android:name=".login.activity.LoginActivityTwo"
             android:exported="true"
             android:screenOrientation="portrait"
             android:windowSoftInputMode="adjustPan"/>
@@ -83,6 +83,42 @@
 
         <!--账户管理-->
         <activity android:name=".my.activity.AccountManagementActivity"
+            android:exported="true"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan"/>
+
+        <!--重置密码-->
+        <activity android:name=".login.activity.ResetPasswordAciticity"
+            android:exported="true"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan"/>
+
+        <!--成员管理-->
+        <activity android:name=".membermanagement.acticity.MemberManagementActivity"
+            android:exported="true"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan"/>
+
+        <!--添加成员-->
+        <activity android:name=".membermanagement.acticity.AddMemberActivity"
+            android:exported="true"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan"/>
+
+        <!--车辆管理-->
+        <activity android:name=".vehiclemanagement.acticity.VehicleManagementActivity"
+            android:exported="true"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan"/>
+
+        <!--添加车辆-->
+        <activity android:name=".vehiclemanagement.acticity.AddCarActivity"
+            android:exported="true"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan"/>
+
+        <!--我的订单-->
+        <activity android:name=".order.activity.MyOrderActivity"
             android:exported="true"
             android:screenOrientation="portrait"
             android:windowSoftInputMode="adjustPan"/>

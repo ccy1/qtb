@@ -256,12 +256,12 @@ public class SiteListFragment extends Fragment implements BaseView ,View.OnClick
      */
     private void getsiteList(int index) {
         Token = SPUtils.getSharedStringData(getContext(),"token");
+//        Url = "https://www.fastmock.site/mock/c2c1d23aaef5d6291972965ad02e2b47/ntb/getSite";
         if (TextUtils.isEmpty(Token)){
             Url = "http://"+RequestURL.new_Url+":"+RequestURL.new_Port+RequestURL.API+RequestURL.pageStationWithoutLogin;//没有登录站点列表分页查询
             Token = "";
         }else {
             Url = "http://"+RequestURL.new_Url+":"+RequestURL.new_Port+RequestURL.API+RequestURL.pageStation;//登录站点列表分页查询
-//            Url = "https://www.fastmock.site/mock/c2c1d23aaef5d6291972965ad02e2b47/ntb/getSite";
             Token = SPUtils.getSharedStringData(getContext(),"token");
         }
         JSONObject obj = new JSONObject();
