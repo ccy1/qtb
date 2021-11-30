@@ -97,12 +97,12 @@ public class MyFragment extends BaseFragment implements BaseView {
     @Override
     public void onClick(View view) {
         switch (view.getId()){
-            case R.id.ll_switchUser://账户管理
+            case R.id.ll_switchUser://
                 if (!TextUtils.isEmpty(token)){
                     showDialog();//退出登录
                 }
                 break;
-            case R.id.ll_resetPassword://密码重置2222222222222222
+            case R.id.ll_resetPassword://密码重置
                 if (!TextUtils.isEmpty(token)){
                     startActivity(new Intent(getActivity(),ResetPasswordAciticity.class));
                 }else {
