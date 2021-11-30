@@ -102,7 +102,7 @@ public class MyFragment extends BaseFragment implements BaseView {
                     showDialog();//退出登录
                 }
                 break;
-            case R.id.ll_resetPassword://密码重置
+            case R.id.ll_resetPassword://密码重置2222222222222222
                 if (!TextUtils.isEmpty(token)){
                     startActivity(new Intent(getActivity(),ResetPasswordAciticity.class));
                 }else {
