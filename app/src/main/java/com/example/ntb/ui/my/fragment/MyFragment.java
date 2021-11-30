@@ -97,7 +97,7 @@ public class MyFragment extends BaseFragment implements BaseView {
     @Override
     public void onClick(View view) {
         switch (view.getId()){
-            case R.id.ll_switchUser://退出登录
+            case R.id.ll_switchUser://退出登录11111111111
                 if (!TextUtils.isEmpty(token)){
                     showDialog();//退出登录
                 }
